@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Security Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+🛡 Cyber Security Toolkit
+
+</div>
+
+<ul>
+
+<li><a href="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+
+<li><a href="/tools"><i class="fa-solid fa-toolbox"></i> Tools</a></li>
+
+<li><a href="/history">📋 History</a></li>
+
+<li><a href="/reports"><i class="fa-solid fa-chart-column"></i> Reports</a></li>
+
+<li><a href="/about"><i class="fa-solid fa-circle-info"></i> About</a></li>
+
+<li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= DASHBOARD ================= -->
+
+<div class="dashboard">
+
+<h1 class="neon">
+
+🛡 Security Operations Center
+
+</h1>
+
+<h2>
+
+Welcome {{ username }} 👋
+
+</h2>
+
+<p>
+
+Welcome to the Professional Cyber Security Dashboard
+
+</p>
+
+<!-- SYSTEM STATUS -->
+
+<div class="status pulse">
+
+🟢 Firewall :
+<b>ACTIVE</b>
+
+&nbsp;&nbsp;&nbsp;
+
+🟢 Antivirus :
+<b>ACTIVE</b>
+
+&nbsp;&nbsp;&nbsp;
+
+🟢 Network :
+<b>ONLINE</b>
+
+</div>
+
+<!-- CLOCK -->
+
+<div class="clock-box">
+
+<div id="clock"></div>
+
+<div id="date"></div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h2>11</h2>
+
+<p>🛠 Security Modules</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>100%</h2>
+
+<p>🛡 Security Score</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>24</h2>
+
+<p>🚨 Threats Detected</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>99.9%</h2>
+
+<p>💻 System Health</p>
+
+</div>
+
+</div>
+
+<div class="status-board">
+
+<h2>📊 Security Overview</h2>
+
+<table class="status-table">
+
+<tr>
+<th>Module</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Password Checker</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+<tr>
+<td>Password Generator</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+<tr>
+<td>URL Scanner</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+<tr>
+<td>IP Lookup</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+<tr>
+<td>File Hash</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+<tr>
+<td>Port Scanner</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+<tr>
+<td>QR Code Scanner</td>
+<td><span class="online">ACTIVE</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="security-meter">
+
+    <h2>🛡 Live Security Score</h2>
+
+    <div class="progress">
+
+        <div class="progress-bar" id="securityBar">
+
+            100%
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TERMINAL -->
+
+<div class="terminal">
+
+<div class="terminal-header">
+
+💻 Hacker Terminal
+
+</div>
+
+<div id="terminal-text">
+
+Loading...
+
+</div>
+
+</div>
+
+<!-- TOOL CARDS -->
+
+<h2 style="margin-top:40px;">
+
+🛠 Cyber Security Tools
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🔐</h2>
+
+<h3>Password Checker</h3>
+
+<p>
+
+Check Password Strength
+
+</p>
+
+<button onclick="location.href='/password-checker'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🔑</h2>
+
+<h3>Password Generator</h3>
+
+<p>
+
+Generate Strong Passwords
+
+</p>
+
+<button onclick="location.href='/password-generator'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🌐</h2>
+
+<h3>URL Scanner</h3>
+
+<p>
+
+Scan Website Security
+
+</p>
+
+<button onclick="location.href='/url-scanner'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📍</h2>
+
+<h3>IP Lookup</h3>
+
+<p>
+
+Analyze IP Address
+
+</p>
+
+<button onclick="location.href='/ip-lookup'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📁</h2>
+
+<h3>File Hash</h3>
+
+<p>
+
+Generate File Hashes
+
+</p>
+
+<button onclick="location.href='/file-hash'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📡</h2>
+
+<h3>Port Scanner</h3>
+
+<p>
+
+Scan Common Ports
+
+</p>
+
+<button onclick="location.href='/port-scanner'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<!-- QR Code Scanner -->
+
+<div class="card">
+
+<h2>📱</h2>
+
+<h3>QR Code Scanner</h3>
+
+<p>
+
+Upload and verify QR Code security.
+
+</p>
+
+<button onclick="location.href='/qr-scanner'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<!-- Phishing Detector -->
+
+<div class="card">
+
+<h2>📧</h2>
+
+<h3>Phishing Detector</h3>
+
+<p>
+
+Analyze suspicious email content.
+
+</p>
+
+<button onclick="location.href='/phishing-detector'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<!-- DNS Lookup -->
+
+<div class="card">
+
+<h2>🌐</h2>
+
+<h3>DNS Lookup</h3>
+
+<p>
+
+Find the IP address of a domain.
+
+</p>
+
+<button onclick="location.href='/dns-lookup'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<!-- SSL Checker -->
+
+<div class="card">
+
+<h2>🔒</h2>
+
+<h3>SSL Checker</h3>
+
+<p>
+
+Check SSL certificate of a website.
+
+</p>
+
+<button onclick="location.href='/ssl-checker'">
+
+Open Tool
+
+</button>
+
+</div>
+
+<!-- Log Analyzer -->
+
+<div class="card">
+
+<h2>📄</h2>
+
+<h3>Log Analyzer</h3>
+
+<p>
+
+Analyze uploaded log files.
+
+</p>
+
+<button onclick="location.href='/log-analyzer'">
+
+Open Tool
+
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<p>
+
+Cyber Security Toolkit © 2026
+
+</p>
+
+</div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='matrix.js') }}"></script>
+
+</body>
+
+</html>

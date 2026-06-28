@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<nav class="navbar">
+
+<div class="logo">
+
+🛡 Cyber Security Toolkit
+
+</div>
+
+<ul>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/tools">Tools</a></li>
+
+<li><a href="/history">History</a></li>
+
+<li><a href="/reports">Reports</a></li>
+
+<li><a href="/admin">Admin</a></li>
+
+<li><a href="/logout">Logout</a></li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>👨‍💼 Admin Dashboard</h1>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h2>{{ total_users }}</h2>
+
+<p>Registered Users</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>{{ total_scans }}</h2>
+
+<p>Total Scans</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>11</h2>
+
+<p>Security Modules</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:40px;">Registered Users</h2>
+
+<table class="status-table">
+
+<tr>
+
+<th>ID</th>
+
+<th>Username</th>
+
+<th>Email</th>
+
+</tr>
+
+{% for user in users %}
+
+<tr>
+
+<td>{{ user["id"] }}</td>
+
+<td>{{ user["username"] }}</td>
+
+<td>{{ user["email"] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='matrix.js') }}"></script>
+
+</body>
+
+</html>
